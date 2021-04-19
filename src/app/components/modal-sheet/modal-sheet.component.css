@@ -1,0 +1,101 @@
+    .close.mat-button {
+        padding: 5px;
+        line-height: 14px;
+        min-width: auto;
+        float: right;
+        margin-right: 5px;
+    }
+    
+    .separator {
+        padding: 20px;
+    }
+    
+    .title {
+        text-align: center;
+    }
+    
+    .inicial-info {
+        margin: 10px;
+        display: flex;
+    }
+    
+    .inicial-info>span {
+        display: block;
+        margin-top: 1px;
+        margin-left: 5px;
+    }
+    
+    .container-inicial-info {
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+    
+    .container-titulo {
+        margin-top: 12px;
+        padding-top: 5px;
+        /*background: #0000000f;*/
+        padding-bottom: 1px;
+        align-items: center;
+    }
+    
+    .title {
+        margin-bottom: 5px;
+        font-weight: 500;
+        max-width: 160px;
+        margin-left: 35%;
+        text-transform: uppercase;
+    }
+    
+    .icon {
+        cursor: pointer;
+    }
+    
+    .NORMAL {
+        border-radius: 10px;
+        background-color: #00800017;
+        border: 2px solid #00800070;
+        box-shadow: 0 0 10px #00800070;
+    }
+    
+    .ATRASADO {
+        border-radius: 10px;
+        background-color: #7d55553d;
+        border: 2px solid #7d55553d;
+        box-shadow: 0 0 10px #7d55553d;
+    }
+    
+    .CRITICO {
+        border: 2px solid #ff00003d;
+        border-radius: 10px;
+        background-color: #ff00003d;
+        border: 2px solid #ff00003d;
+        box-shadow: 0 0 10px #ff00003d;
+    }
+    
+    .ALERTA {
+        border: 2px solid #ffff006b;
+        border-radius: 10px;
+        background-color: #ffff006b;
+        border: 2px solid #ffff006b;
+        box-shadow: 0 0 10px #ffff0023;
+    }
+    
+    .VAZIO {
+        border: 2px solid #c0c0c04a;
+        border-radius: 10px;
+        background-color: #c0c0c04a;
+        border: 2px solid #c0c0c04a;
+        box-shadow: 0 0 10px #c0c0c04a;
+    }
+    
+    .body-matcard {
+        min-height: 180px;
+    }
+    
+    .body-matcard {
+        display: flex;
+    }
+    
+    .body-itens {
+        width: 50%;
+    }

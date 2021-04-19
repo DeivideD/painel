@@ -1,0 +1,30 @@
+.example-container {
+    position: absolute;
+    top: 0;
+    min-width: 800px;
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.example-sidenav {
+    padding: 20px;
+}
+
+body,
+html {
+    overflow: hidden;
+}
+
+.close.mat-button {
+    padding: 5px;
+    line-height: 14px;
+    min-width: auto;
+    margin-right: 5px;
+}

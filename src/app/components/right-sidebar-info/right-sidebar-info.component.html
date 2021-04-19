@@ -1,0 +1,11 @@
+<mat-drawer #sidenav class="example-sidenav" mode="side" position="end">
+    <div>
+        <button class="close" mat-button (click)="closeDialog()"><mat-icon>arrow_right_alt</mat-icon></button>
+
+    </div>
+    <p>Auto-resizing sidenav Auto-resizing sidenav v</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+</mat-drawer>

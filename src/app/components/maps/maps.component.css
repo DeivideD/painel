@@ -1,0 +1,26 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.marker {
+    display: block;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+}
+
+#principal-map {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    ;
+}
+
+.mapboxgl-popup {
+    max-width: 600px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}

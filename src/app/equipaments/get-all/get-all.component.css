@@ -1,0 +1,107 @@
+table {
+    width: 100%;
+    height: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 24.4%;
+}
+
+.cdk-header-cell {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.center {
+    position: absolute;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.mat-sort-header-container {
+    align-items: center;
+}
+
+.vazio .material-icons {
+    color: #808080;
+}
+
+.alerta .material-icons {
+    color: #1648d3;
+}
+
+.critico .material-icons {
+    color: #fa0a0a;
+}
+
+.normal .material-icons {
+    color: #41d19a;
+}
+
+.atrasado .material-icons {
+    color: #b1b409;
+}
+
+.legenda {
+    margin-top: 20px;
+    display: flex;
+}
+
+.legenda>div {
+    margin-right: 20px;
+}
+
+.list-line {
+    display: flex;
+}
+
+.legenda>.vazio,
+.normal,
+.atrasado,
+.critico,
+.alerta {
+    width: 150px;
+    display: inline-flex;
+}
+
+.text-legenda {
+    padding-left: 10px;
+    margin-top: 2px;
+}
+
+.forms-search {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.mat-chip-list-wrapper {
+    margin: 20px !important;
+}
+
+.geral,
+.base,
+.contrato {
+    margin-right: 11.5px;
+}
+
+.spiner {
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #FFF;
+}
+
+.spiner-loading {
+    margin-top: 20%;
+    margin-left: 50%;
+}

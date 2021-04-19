@@ -1,0 +1,229 @@
+<div class="container-titulo  {{ status }}">
+    <button class="close" mat-button (click)="closeDialog($event)">X</button>
+    <h1 matTooltip="{{ status}} - {{ status_descricao }}" class="title"> {{ title }}</h1>
+</div>
+
+<div class="container-inicial-info">
+    <div class="inicial-info">
+        <mat-icon class="icon" matTooltip="Endereço"> location_on</mat-icon><span> - {{ endereco }} </span>
+    </div>
+
+    <div class="inicial-info">
+
+        <mat-icon class="icon" matTooltip="Cidade"> location_city</mat-icon><span> - {{ cidade }}</span>
+    </div>
+
+    <div class="inicial-info">
+
+        <mat-icon class="icon" matTooltip="Último IP"> devices</mat-icon><span> - <span *ngIf="this.ip == null">Não Encontrado</span> {{ ip }}</span>
+    </div>
+
+
+    <div class="inicial-info">
+
+        <mat-icon class="icon" matTooltip="Ultimo Lote Enviado"> event</mat-icon><span> - <span *ngIf="this.lote == null">Não Encontrado</span>{{ lote }}</span>
+    </div>
+
+
+    <div class="inicial-info">
+
+        <mat-icon class="icon" matTooltip="Data de Execução do Script">date_range</mat-icon><span> - <span *ngIf="this.script == null">Não Encontrado</span> {{ script }}</span>
+    </div>
+</div>
+
+
+
+
+
+
+
+<mat-tab-group style="overflow: hidden;">
+
+
+    <mat-tab>
+
+        <ng-template mat-tab-label>
+            <mat-icon>assessment</mat-icon>
+            <span> Status</span>
+        </ng-template>
+        <div class="body-matcard">
+            <div class="body-itens">
+
+                <div class="inicial-info">
+                    <mat-icon> traffic</mat-icon><span> - Sinal</span>
+                </div>
+
+                <div class="inicial-info">
+                    <mat-icon>settings_input_svideo</mat-icon><span> - dfgfdfg</span>
+
+                </div>
+
+                <div class="inicial-info">
+                    <mat-icon>last_page</mat-icon><span> - dfgfdfg</span>
+
+                </div>
+                <div class="inicial-info">
+                    <mat-icon>sort</mat-icon><span> - dfgfdfg</span>
+
+                </div>
+
+            </div>
+            <div class="body-itens">
+                <div class="inicial-info">
+                    <mat-icon>theaters</mat-icon><span> - dfgfdfg</span>
+
+                </div>
+                <div class="inicial-info">
+                    <mat-icon>view_array</mat-icon><span> - MPT</span>
+
+                </div>
+
+                <div class="inicial-info">
+                    <mat-icon>power</mat-icon><span> - Energia</span>
+
+                </div>
+                <div class="inicial-info">
+                    <mat-icon>flash_on</mat-icon><span> - Energia</span>
+
+                </div>
+            </div>
+        </div>
+
+    </mat-tab>
+    <mat-tab>
+
+        <ng-template mat-tab-label>
+            <mat-icon>library_books</mat-icon>
+            <span> Inventario</span>
+        </ng-template>
+        <div class="body-matcard">
+            <div class="body-itens">
+                <div class="inicial-info">
+                    <mat-icon>memory</mat-icon><span> - Processador</span>
+
+                </div>
+                <div class="inicial-info">
+                    <mat-icon>videogame_asset</mat-icon><span> - Memoria</span>
+
+                </div>
+                <div class="inicial-info">
+                    <mat-icon>bubble_chart</mat-icon><span> - Sereal</span>
+
+                </div>
+                <div class="inicial-info">
+                    <mat-icon>camera_alt</mat-icon><span> - 4 cameras</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="body-itens">
+                <div class="inicial-info">
+                    <mat-icon>storage</mat-icon><span> - Storage</span>
+
+                </div>
+                <div class="inicial-info">
+                    <mat-icon>usb</mat-icon><span> - Versao Utils</span>
+
+                </div>
+                <div class="inicial-info">
+                    <mat-icon>priority_high</mat-icon><span> - Processador</span>
+
+                </div>
+
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Third">
+
+        <ng-template mat-tab-label>
+            <mat-icon>widgets</mat-icon>
+            <span> Dados</span>
+        </ng-template>
+        <div class="body-matcard">
+            <div class="body-itens">
+                <div class="inicial-info">
+                    <mat-icon>equalizer</mat-icon><span> - Processador</span>
+
+                </div>
+                <div class="inicial-info">
+                    <mat-icon>equalizer</mat-icon><span> - Processador</span>
+
+                </div>
+                <div class="inicial-info">
+                    <mat-icon>equalizer</mat-icon><span> - Processador</span>
+
+                </div>
+            </div>
+            <div class="body-itens">
+                <div class="inicial-info">
+                    <mat-icon>equalizer</mat-icon><span> - Processador</span>
+
+                </div>
+                <div class="inicial-info">
+                    <mat-icon>equalizer</mat-icon><span> - Processador</span>
+
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+
+
+    <mat-tab label="fourth">
+
+        <ng-template mat-tab-label>
+            <mat-icon>info</mat-icon>
+            <span> Informações</span>
+        </ng-template>
+        <div class="body-matcard">
+            <div class="body-itens">
+                <div class="inicial-info">
+                    <mat-icon>loyalty</mat-icon><span> - MISTO</span>
+
+                </div>
+                <div class="inicial-info">
+                    <mat-icon>euro_symbol</mat-icon><span> - Custo</span>
+
+                </div>
+                <div class="inicial-info">
+                    <mat-icon>link</mat-icon><span> - Processador</span>
+
+                </div>
+                <div class="inicial-info">
+                    <mat-icon>settings_ethernet</mat-icon><span> - Processador</span>
+
+                </div>
+                <div class="inicial-info">
+                    <mat-icon>memory</mat-icon><span> - Processador</span>
+
+                </div>
+
+
+            </div>
+            <div class="body-itens">
+                <div class="inicial-info">
+                    <mat-icon>brightness_5</mat-icon><span> - Processador</span>
+
+                </div>
+                <div class="inicial-info">
+                    <mat-icon>brightness_5</mat-icon><span> - Processador</span>
+
+                </div>
+                <div class="inicial-info">
+                    <mat-icon>brightness_5</mat-icon><span> - Processador</span>
+
+                </div>
+                <div class="inicial-info">
+                    <mat-icon>brightness_5</mat-icon><span> - Processador</span>
+
+                </div>
+
+            </div>
+        </div>
+
+    </mat-tab>
+
+
+</mat-tab-group>
+<div class="separator"></div>
