@@ -1,7 +1,5 @@
 html,
 body {
-    width: 100%;
-    height: 100%;
     margin: 0;
 }
 
@@ -14,13 +12,16 @@ body {
 }
 
 #principal-map {
-    width: 100%;
+    background-image: url('../../../assets/images/ceu2.jpg');
+    width: 100.7%;
     height: 100%;
-    background-color: red;
-    ;
 }
 
 .mapboxgl-popup {
     max-width: 600px;
     font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.mapboxgl-ctrl-bottom-right {
+    display: none;
 }

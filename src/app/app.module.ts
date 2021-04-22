@@ -14,7 +14,10 @@ import { MapsComponent } from './components/maps/maps.component';
 import { DialogsComponent } from './components/dialog/dialogs.component';
 import { ModalSheetComponent } from './components/modal-sheet/modal-sheet.component';
 import { RightSidebarInfoComponent } from './components/right-sidebar-info/right-sidebar-info.component';
-import { SidenavService } from './shared/';
+import { SidenavService } from './components/right-sidebar-info/sidenav.service';
+import { SidebarMenuComponent } from './components/sidebar-menu/sidebar-menu.component';
+import { MenuService } from './components/sidebar-menu/menu.service';
+import { MenubarComponent } from './components/menubar/menubar.component';
 
 
 
@@ -30,6 +33,8 @@ import { SidenavService } from './shared/';
     DialogsComponent,
     ModalSheetComponent,
     RightSidebarInfoComponent,
+    SidebarMenuComponent,
+    MenubarComponent,
   ],
   imports: [
     HttpClientModule,
@@ -39,7 +44,11 @@ import { SidenavService } from './shared/';
     EquipamentsModule,
     BrowserAnimationsModule
   ],
-  providers: [  AplicationService, SidenavService ],
+  providers: [  
+    AplicationService, 
+    SidenavService, 
+    MenuService 
+  ],
   bootstrap: [AppComponent]
 }) 
 export class AppModule { }

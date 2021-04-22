@@ -1,31 +1,13 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer class="sidenav" fixedInViewport="true">
-        <mat-toolbar>Menu</mat-toolbar>
-        <mat-nav-list class="menu-item">
-            <a mat-list-item [routerLink]="['home']" (click)="drawer.toggle();hideControl()">
-                <mat-icon>account_balance</mat-icon><span class="space-menu"> Home </span> </a>
-            <a mat-list-item [routerLink]="['equipamentos']" (click)="drawer.toggle();hideControl()">
-                <mat-icon>usb</mat-icon><span class="space-menu">Equipamentos </span></a>
-
-
-            <a mat-list-item [routerLink]="['usuarios']" (click)="drawer.toggle();hideControl()">
-                <mat-icon>group_add</mat-icon><span class="space-menu">Gestao de Usuarios </span></a>
-
-
-            <a mat-list-item href="#">Agentes</a>
-            <a mat-list-item href="#">Jogadores</a>
-        </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content (click)="hideControl()">
+    <mat-sidenav-content>
         <mat-toolbar color="primary" class='nav-menu'>
             <div class='left'>
-                <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle(); showControl()">
+                <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="openPrincipalMenu(); statusMenu.divControl()">
                         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
                     </button>
                 <span>Painel Mobit</span>
             </div>
             <div class="right">
-
                 <button mat-icon-button aria-label="Example icon-button with heart icon" (click)="rightNave()">
                     <mat-icon matBadge="15" matBadgeColor="warn" >notification_important</mat-icon>
                   </button>
@@ -38,4 +20,6 @@
         </ng-content>
     </mat-sidenav-content>
 </mat-sidenav-container>
-<div class="active" (click)="drawer.toggle(); hideControl()" *ngIf="isSideVisible === true"></div>
+
+<app-right-sidebar-info></app-right-sidebar-info>
+<app-sidebar-menu #statusMenu></app-sidebar-menu>

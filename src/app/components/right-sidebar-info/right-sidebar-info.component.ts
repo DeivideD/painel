@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { SidenavService } from 'src/app/shared';
+import { SidenavService } from './sidenav.service';
 import { MatSidenav } from '@angular/material/sidenav'
 
 @Component({
@@ -14,7 +14,6 @@ export class RightSidebarInfoComponent implements OnInit {
   constructor(private sidenavService: SidenavService) { }
 
   ngOnInit(): void {
-    console.log("SSS"+ this.sidenav);
 		this.sidenavService.setSidenav(this.sidenav);
   }
 

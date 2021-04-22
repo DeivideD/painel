@@ -1,0 +1,26 @@
+.mat-nav-list .mat-list-item {
+    overflow: hidden;
+    padding-right: 50px;
+    padding-left: 20px;
+}
+
+.active {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    height: 93.2%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.sidenav-container {
+    z-index: 2;
+}
+
+.space-menu {
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+.mat-nav-list {
+    overflow: hidden;
+}

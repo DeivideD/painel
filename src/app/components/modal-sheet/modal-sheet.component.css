@@ -23,6 +23,8 @@
         display: block;
         margin-top: 1px;
         margin-left: 5px;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.637);
     }
     
     .container-inicial-info {
@@ -98,4 +100,20 @@
     
     .body-itens {
         width: 50%;
+    }
+    
+    .yellow {
+        color: #ffa600 !important;
+    }
+    
+    .red {
+        color: rgba(255, 0, 0, 0.623) !important;
+    }
+    
+    .marrom {
+        color: #7d5555;
+    }
+    
+    .container {
+        background-color: rgba(0, 0, 0, 0.034);
     }

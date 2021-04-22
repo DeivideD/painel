@@ -10,11 +10,14 @@
 
 /*@import '@angular/material/prebuilt-themes/purple-green.css';*/
 
+.cdk-global-scrollblock {
+    overflow: auto;
+}
+
 html,
 body {
     height: 100%;
     width: 100%;
-    background-color: slateblue;
     overflow-x: hidden;
 }
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SidenavService } from '../../shared/';
+import { SidenavService } from '../right-sidebar-info/sidenav.service';
+import { MenuService } from '../sidebar-menu/menu.service';
+
 
 
 @Component({
@@ -10,27 +12,24 @@ import { SidenavService } from '../../shared/';
 export class TopbarComponent implements OnInit {
   showFiller: boolean = false;
   isSideVisible: boolean = false;
+  isButtomAlertVisible: boolean  = false;
   toggleActive: boolean = false;
-  constructor(private sidenav: SidenavService) {  }
 
-
-  ngOnInit(): void {
-
+  constructor(private sidenav: SidenavService, private principalMenu : MenuService ) {  }
+  
+  ngOnInit() {
   }
 
-  showControl(){
-    this.isSideVisible = true;
-  }
-
-
-  hideControl(){
-    this.isSideVisible = false;
-  }
 
   rightNave(){
-    console.log("Clicked");
     this.toggleActive = !this.toggleActive;
     this.sidenav.toggle();
+  }
+
+
+
+  openPrincipalMenu(){
+    this.principalMenu.toggle();
   }
 }
 

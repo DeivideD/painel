@@ -54,11 +54,8 @@ export class MapsComponent implements OnInit {
 
     //comentar depois
     this.getAllMarks();
-
     // Add zoom and rotation controls to the map.
     map.addControl(new mapboxgl.NavigationControl());
-
-
   }
 
   getAllMarks() {
