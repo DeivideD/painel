@@ -18,6 +18,9 @@ import { SidenavService } from './components/right-sidebar-info/sidenav.service'
 import { SidebarMenuComponent } from './components/sidebar-menu/sidebar-menu.component';
 import { MenuService } from './components/sidebar-menu/menu.service';
 import { MenubarComponent } from './components/menubar/menubar.component';
+import { SidebarSearachComponent } from './components/sidebar-searach/sidebar-searach.component';
+import { SearachnavService } from './components/sidebar-searach/searach.service';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -35,8 +38,11 @@ import { MenubarComponent } from './components/menubar/menubar.component';
     RightSidebarInfoComponent,
     SidebarMenuComponent,
     MenubarComponent,
+    SidebarSearachComponent,
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserModule,
     MaterialSharedModule,
@@ -47,7 +53,8 @@ import { MenubarComponent } from './components/menubar/menubar.component';
   providers: [  
     AplicationService, 
     SidenavService, 
-    MenuService 
+    MenuService,
+    SearachnavService 
   ],
   bootstrap: [AppComponent]
 }) 

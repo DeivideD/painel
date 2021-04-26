@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import * as mapboxgl from 'mapbox-gl'
 import { AplicationService } from 'src/app/shared';
@@ -7,6 +7,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogsComponent } from 'src/app/components/dialog/dialogs.component'
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { ModalSheetComponent } from '../modal-sheet/modal-sheet.component';
+import { SearachnavService } from '../sidebar-searach/searach.service'
+import { Subscription } from 'rxjs';
+import { MapOperator } from 'rxjs/internal/operators/map';
 
 
 
@@ -34,12 +37,16 @@ export class MapsComponent implements OnInit {
   map = mapboxgl.Mapa;
   equipaments: Equipaments[] = [];
   toggleActive: boolean = false;
+  aux
+
+
 
   constructor(
-    
+
     private aplicationService: AplicationService,
     public dialog: MatDialog,
-    private _bottomSheet: MatBottomSheet) { }
+    private _bottomSheet: MatBottomSheet,
+    private serviceSearach: SearachnavService) { }
 
   ngOnInit(): void {
 
@@ -56,11 +63,44 @@ export class MapsComponent implements OnInit {
     this.getAllMarks();
     // Add zoom and rotation controls to the map.
     map.addControl(new mapboxgl.NavigationControl());
+
+    //filtro por contrato
+    this.serviceSearach.emiterFilterContract.subscribe(fil => {
+      console.log(fil);
+      //this.geojson.forEach(element => {
+      //element.remove();
+      //});
+
+    });
+
+    //filtro por status
+    this.serviceSearach.emiterFilterStatus.subscribe(fil => {
+      var array: any = this.equipaments;
+      var anotherOne: any = fil;
+      //console.log(fil);
+
+      //limpo o mapa
+      this.geojson.forEach(element => {
+        element.remove();
+      });
+
+      //filtro todos
+      if (fil.length == 0) {
+        this.generateHtml(this.equipaments);
+      } else {
+        var filtered = array.filter(function (item) {
+          var uper = anotherOne.map(p => p.toUpperCase());
+          return uper.indexOf(item.informacoes[0].status) !== -1;
+        });
+        this.generateHtml(filtered);
+      }
+    });
   }
 
   getAllMarks() {
     this.aplicationService.getAllEquipaments().subscribe((data: any) => {
       this.equipaments = data.dados;
+      this.aux = data.dados;
       this.generateHtml(this.equipaments);
     }, error => {
       this.dialog.open(DialogsComponent, {
@@ -113,9 +153,12 @@ export class MapsComponent implements OnInit {
               popup.remove();
             }); */
 
-      new mapboxgl.Marker(el)
+      let coordenates = new mapboxgl.Marker(el)
         .setLngLat([marker.longitude, marker.latitude])
         .addTo(map);
+      //console.log(typeof teste)    
+      //guardo os elementos para removelos futuramente
+      this.geojson.push(coordenates);
     });
   }
 
@@ -125,4 +168,27 @@ export class MapsComponent implements OnInit {
       data: [{ dados: marker, 'type': 'info Corujita' }]
     });
   }
+
+
+  private _filter(filter: string) {
+    const filterValue = filter.toLowerCase();
+    var data
+
+    //= this.aux.filteredData;
+    if (typeof this.aux != 'undefined') {
+      data = this.aux.filteredData;
+    }
+
+    if (filter != '' && filter != 'Todos') {
+
+      function retornaEstado(value) {
+        if (value.informacoes[0].status.toLowerCase() == filter.toLowerCase())
+          return value;
+      }
+
+      var result = data.filter(retornaEstado);
+
+    }
+  }
 }
+

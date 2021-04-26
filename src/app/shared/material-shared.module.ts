@@ -22,6 +22,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatGridListModule} from '@angular/material/grid-list'; 
 import {MatBadgeModule} from '@angular/material/badge'; 
+import {MatChipsModule} from '@angular/material/chips';
 
 
 
@@ -33,6 +34,7 @@ import {MatBadgeModule} from '@angular/material/badge';
   providers: [],
   exports: [
     MatGridListModule,
+    MatChipsModule,
     MatDialogModule,
     MatTabsModule,
     MatTooltipModule,

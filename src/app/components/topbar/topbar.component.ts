@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
 import { SidenavService } from '../right-sidebar-info/sidenav.service';
 import { MenuService } from '../sidebar-menu/menu.service';
+import { SearachnavService } from '../sidebar-searach/searach.service';
 
 
 
@@ -15,7 +17,7 @@ export class TopbarComponent implements OnInit {
   isButtomAlertVisible: boolean  = false;
   toggleActive: boolean = false;
 
-  constructor(private sidenav: SidenavService, private principalMenu : MenuService ) {  }
+  constructor(private sidenav: SidenavService, private principalMenu : MenuService, private sarachNave: SearachnavService ) {  }
   
   ngOnInit() {
   }
@@ -25,11 +27,13 @@ export class TopbarComponent implements OnInit {
     this.toggleActive = !this.toggleActive;
     this.sidenav.toggle();
   }
-
-
-
+  
   openPrincipalMenu(){
     this.principalMenu.toggle();
+  }
+
+  openSearachSideNav(){
+    this.sarachNave.toggle();
   }
 }
 

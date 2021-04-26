@@ -1,0 +1,40 @@
+<mat-drawer #searachNave class="example-sidenav" mode="side" position="end">
+    <div>
+        <button class="close" mat-button (click)="closeDialog()"><mat-icon>arrow_right_alt</mat-icon></button>
+    </div>
+    <div class="search-contrato">
+        <mat-form-field class="example-chip-list">
+            <mat-label>Buscar por Contrato</mat-label>
+            <mat-chip-list #chipList aria-label="Fruit selection">
+                <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable" [removable]="removable" (removed)="remove(fruit)">
+                    {{fruit}}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+                <input placeholder="Selecione..." #fruitInput [formControl]="fruitCtrl" [matAutocomplete]="auto" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+                    {{fruit}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </div>
+
+    <div class="search-status">
+        <mat-form-field class="chip-list-status">
+            <mat-label>Buscar por Status</mat-label>
+            <mat-chip-list #chipListStatus aria-label="Fruit selection">
+                <mat-chip *ngFor="let sttus of status" [selectable]="selectable" [removable]="removable" (removed)="removeStatus(sttus)">
+                    {{sttus}}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+                <input placeholder="Pesquisar por Status..." [formControl]="statusCtrl" #statusInput [matAutocomplete]="statusComplit" [matChipInputFor]="chipListStatus" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="addStatus($event)">
+            </mat-chip-list>
+            <mat-autocomplete #statusComplit="matAutocomplete" (optionSelected)="selectedStatus($event)">
+                <mat-option *ngFor="let sttus of filteredStatus | async" [value]="sttus">
+                    {{sttus}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </div>
+</mat-drawer>

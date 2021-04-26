@@ -13,8 +13,11 @@ body {
 
 #principal-map {
     background-image: url('../../../assets/images/ceu2.jpg');
-    width: 100.7%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100.8%;
     height: 100%;
+    overflow-y: hidden;
 }
 
 .mapboxgl-popup {
@@ -24,4 +27,8 @@ body {
 
 .mapboxgl-ctrl-bottom-right {
     display: none;
+}
+
+.example-chip-list {
+    width: 100%;
 }
