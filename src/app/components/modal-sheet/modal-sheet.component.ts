@@ -100,7 +100,7 @@ export class ModalSheetComponent implements OnInit {
       this.title = element.dados.equipamento;
       this.endereco = captalize.default(element.dados.endereco_mestre);
       this.cidade = captalize.default(element.dados.cidade);
-      this.ip = element.dados.ultimo_ip;
+      this.ip =  element.dados.ultimo_ip;
       this.lote = element.dados.data_lote;
       this.script = element.dados.data_script;
       this.status = element.dados.informacoes[0].status;

@@ -117,3 +117,12 @@
     .container {
         background-color: rgba(0, 0, 0, 0.034);
     }
+    
+    .link {
+        text-decoration: none;
+        color: #5a5a5a;
+    }
+    
+    .link:hover {
+        text-decoration: underline;
+    }

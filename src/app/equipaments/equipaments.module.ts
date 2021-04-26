@@ -8,9 +8,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
+
+
 @NgModule({
   declarations: [
-    GetAllComponent
+    GetAllComponent,
+
   ],
   imports: [
     CommonModule,
@@ -23,6 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EquipamentService
   ], 
   exports:[
+    
     GetAllComponent
   ]
 })

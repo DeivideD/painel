@@ -9,7 +9,7 @@ import { UserService } from './service';
 
 @NgModule({
   declarations: [
-    UsersComponent
+    UsersComponent,
   ],
   imports: [
     CommonModule,

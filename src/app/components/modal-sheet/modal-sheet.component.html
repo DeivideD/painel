@@ -16,7 +16,7 @@
 
         <div class="inicial-info">
 
-            <mat-icon class="icon" matTooltip="Último IP"> devices</mat-icon><span> - <span *ngIf="this.ip == null">Não Encontrado</span> {{ ip }}</span>
+            <mat-icon class="icon" matTooltip="Último IP"> devices</mat-icon><span> - <span *ngIf="this.ip == null">Não Encontrado</span><a class="link" href="https://{{ ip }}:8443/rsservices/itsconfig" target="_blank">{{ ip }} </a></span>
         </div>
 
 

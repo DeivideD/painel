@@ -21,6 +21,7 @@ import { MenubarComponent } from './components/menubar/menubar.component';
 import { SidebarSearachComponent } from './components/sidebar-searach/sidebar-searach.component';
 import { SearachnavService } from './components/sidebar-searach/searach.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { LoginModule } from './login/login.module';
 
 
 
@@ -42,6 +43,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   ],
   imports: [
     FormsModule,
+    LoginModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserModule,
