@@ -1,0 +1,62 @@
+.card {
+    align-items: center;
+    border-radius: 5%;
+    padding: 2%;
+}
+
+.mat-form-field {
+    min-width: 350px;
+}
+
+mat-card-title,
+mat-card-content {
+    display: flex;
+    justify-content: center;
+}
+
+.error {
+    padding: 16px;
+    color: white;
+}
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.content {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../../assets/images/background-criar-site.png');
+    background-color: rgba(0, 0, 0, 0.356);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+.icon {
+    font-size: 7vw;
+}
+
+.div-icon {
+    padding: 10px 100px;
+}
+
+.button>button {
+    background-color: rgba(0, 0, 0, .87);
+    color: #fff;
+    min-width: 100px;
+}
+
+.modal-login .hint-text {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.small,
+small {
+    font-size: 80%;
+    font-weight: 400;
+    text-align: center;
+}

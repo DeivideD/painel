@@ -1,11 +1,11 @@
 <mat-sidenav #principalMenu class="sidenav" fixedInViewport="true">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list class="menu-item">
-        <a mat-list-item [routerLink]="['home']" (click)="toggleMenu();divControl()">
+        <a mat-list-item [routerLink]="['/home']" (click)="toggleMenu();divControl()">
             <mat-icon>account_balance</mat-icon><span class="space-menu"> Home </span> </a>
-        <a mat-list-item [routerLink]="['equipamentos']" (click)="principalMenu.toggle(); divControl()">
+        <a mat-list-item [routerLink]="['/equipamentos']" (click)="principalMenu.toggle(); divControl()">
             <mat-icon>usb</mat-icon><span class="space-menu">Equipamentos </span></a>
-        <a mat-list-item [routerLink]="['usuarios']" (click)="principalMenu.toggle(); divControl()">
+        <a mat-list-item [routerLink]="['/usuarios']" contextmenu="full" (click)="principalMenu.toggle(); divControl()">
             <mat-icon>group_add</mat-icon><span class="space-menu">Gestao de Usuarios </span></a>
         <a mat-list-item href="#">Agentes</a>
         <a mat-list-item href="#">Jogadores</a>

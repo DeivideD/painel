@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
+
 @NgModule({
   declarations: [
     GetAllComponent,
@@ -26,7 +27,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EquipamentService
   ], 
   exports:[
-    
     GetAllComponent
   ]
 })

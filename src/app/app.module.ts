@@ -20,8 +20,10 @@ import { MenuService } from './components/sidebar-menu/menu.service';
 import { MenubarComponent } from './components/menubar/menubar.component';
 import { SidebarSearachComponent } from './components/sidebar-searach/sidebar-searach.component';
 import { SearachnavService } from './components/sidebar-searach/searach.service';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { LoginModule } from './login/login.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EquipamentsComponent } from './pages/equipaments/equipaments.component';
+import { UserService } from './users/service/users.service'
+
 
 
 
@@ -40,10 +42,10 @@ import { LoginModule } from './login/login.module';
     SidebarMenuComponent,
     MenubarComponent,
     SidebarSearachComponent,
+    EquipamentsComponent,
   ],
   imports: [
     FormsModule,
-    LoginModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserModule,
@@ -55,9 +57,11 @@ import { LoginModule } from './login/login.module';
   providers: [  
     AplicationService, 
     SidenavService, 
+    UserService,
     MenuService,
     SearachnavService 
   ],
+  exports : [ MenubarComponent ],
   bootstrap: [AppComponent]
 }) 
 export class AppModule { }
