@@ -25,6 +25,9 @@ import { EquipamentsComponent } from './pages/equipaments/equipaments.component'
 import { UserService } from './users/service/users.service'
 
 
+import { httpInterceptorProviders } from './http-intersector';
+
+
 
 
 
@@ -59,6 +62,7 @@ import { UserService } from './users/service/users.service'
     SidenavService, 
     UserService,
     MenuService,
+    httpInterceptorProviders,
     SearachnavService 
   ],
   exports : [ MenubarComponent ],

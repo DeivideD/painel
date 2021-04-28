@@ -6,7 +6,6 @@ export const environment = {
   production:  false,
   apiURL:     'http://10.85.101.27:8687/api',
   mapKey:     'pk.eyJ1IjoiZGVpdmlkZWQiLCJhIjoiY2ttZjVlaW1yMHk1MzJ5bXg1c3R3dDJ6YyJ9.-49lXMd9YAPU-DfkLk7J1w',
-  apiKey:     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE4Mzk5NDU4LCJleHAiOjE2MTg0NDI2NTh9.464AxelkVNAQj4TfjBl3XW_nndmcpifZcts8wh328uk'
 };
 
 /*

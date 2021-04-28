@@ -10,6 +10,7 @@ import { ModalSheetComponent } from '../modal-sheet/modal-sheet.component';
 import { SearachnavService } from '../sidebar-searach/searach.service'
 import { Subscription } from 'rxjs';
 import { MapOperator } from 'rxjs/internal/operators/map';
+import { EquipamentService } from 'src/app/equipaments/service';
 
 
 
@@ -43,7 +44,7 @@ export class MapsComponent implements OnInit {
 
   constructor(
 
-    private aplicationService: AplicationService,
+    private equipamentsService: EquipamentService,
     public dialog: MatDialog,
     private _bottomSheet: MatBottomSheet,
     private serviceSearach: SearachnavService) { }
@@ -98,7 +99,7 @@ export class MapsComponent implements OnInit {
   }
 
   getAllMarks() {
-    this.aplicationService.getAllEquipaments().subscribe((data: any) => {
+    this.equipamentsService.getAllEquipaments().subscribe((data: any) => {
       this.equipaments = data.dados;
       this.aux = data.dados;
       this.generateHtml(this.equipaments);

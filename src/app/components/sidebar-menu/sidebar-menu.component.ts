@@ -1,5 +1,6 @@
 import { Component, Input , OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav'
+import { AplicationService } from 'src/app/shared';
 import { MenuService } from './menu.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class SidebarMenuComponent implements OnInit {
   @ViewChild('principalMenu', {static: true}) public principalMenu: MatSidenav;
   isSideVisible: boolean = false;
 
-  constructor(private menuService: MenuService ) { }
+  constructor(private menuService: MenuService, private appService : AplicationService ) { }
 
   ngOnInit(): void {
     this.menuService.setSidenav(this.principalMenu);
@@ -27,6 +28,10 @@ export class SidebarMenuComponent implements OnInit {
 
   toggleMenu(){
     this.menuService.toggle();
+  }
+
+  logout(){
+    this.appService.logout();
   }
 
 }

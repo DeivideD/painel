@@ -20,25 +20,16 @@ export class EquipamentService implements OnInit {
   }
 
   // Headers
+  /**
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
       'x-access-token': environment.apiKey
     })
-  }
-
-  copylistarTodosProdutos(): Observable<Equipaments> {
-    return this.http.get<Equipaments>(`${environment.apiURL}/equipamentos/buscar/semtoken`, this.httpOptions);
-  }
+  } */
 
   getAllEquipaments(): any {
-    return this.http.get(`${environment.apiURL}/equipamentos/buscar/semtoken`, this.httpOptions)
-  }
-
-
-  getAllEquipamentsPage (pageSize: number, currentPage: number ): any {
-    const queryParams = `?pageSize=${pageSize}&page=${currentPage}`;
-    return this.http.get(`${environment.apiURL}/equipamentos/buscar/paginado${queryParams}`, this.httpOptions)
+    return this.http.get(`${environment.apiURL}/equipamentos/buscar/`)
   }
 }
 

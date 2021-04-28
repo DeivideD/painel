@@ -15,8 +15,15 @@ mat-card-content {
 }
 
 .error {
-    padding: 16px;
     color: white;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.error-caps {
+    background-color: rgba(255, 0, 0, 0.719);
+    border-radius: 5px;
+    padding: 16px;
 }
 
 .button {
