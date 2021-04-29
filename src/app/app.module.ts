@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { EquipamentsModule } from './equipaments/equipaments.module';
+import { UsersModule } from './users/users.module';
 import { MaterialSharedModule, AplicationService } from './shared';
 import { MapsComponent } from './components/maps/maps.component';
 import { DialogsComponent } from './components/dialog/dialogs.component';
@@ -23,9 +24,9 @@ import { SearachnavService } from './components/sidebar-searach/searach.service'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EquipamentsComponent } from './pages/equipaments/equipaments.component';
 import { UserService } from './users/service/users.service'
-
-
 import { httpInterceptorProviders } from './http-intersector';
+import { UsersComponent } from './pages/users/users.component';
+
 
 
 
@@ -46,6 +47,7 @@ import { httpInterceptorProviders } from './http-intersector';
     MenubarComponent,
     SidebarSearachComponent,
     EquipamentsComponent,
+    UsersComponent,
   ],
   imports: [
     FormsModule,
@@ -55,6 +57,7 @@ import { httpInterceptorProviders } from './http-intersector';
     MaterialSharedModule,
     AppRoutingModule,
     EquipamentsModule,
+    UsersModule,
     BrowserAnimationsModule
   ],
   providers: [  
@@ -65,7 +68,6 @@ import { httpInterceptorProviders } from './http-intersector';
     httpInterceptorProviders,
     SearachnavService 
   ],
-  exports : [ MenubarComponent ],
   bootstrap: [AppComponent]
 }) 
 export class AppModule { }

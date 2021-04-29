@@ -15,15 +15,15 @@ export class MenuService {
   }
 
   public open() {
+    this.isActive = true;
     return this.sidenav.open();
   }
 
 
   public close() {
+    this.isActive = false;
     return this.sidenav.close();
   }
-
-
 
   public toggle() {
     this.isActive = ! this.isActive;

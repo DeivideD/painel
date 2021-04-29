@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import jwt_decode from 'jwt-decode';
@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AplicationService {
+	correntPage = new EventEmitter<any>();
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -77,4 +78,5 @@ export class AplicationService {
       this.router.navigate(['login']);
     }, 100);
   }
+
 }

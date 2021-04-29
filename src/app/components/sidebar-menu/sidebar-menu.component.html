@@ -7,7 +7,7 @@
             <mat-icon>usb</mat-icon><span class="space-menu">Equipamentos </span></a>
         <a mat-list-item [routerLink]="['/usuarios']" (click)="principalMenu.toggle(); divControl()">
             <mat-icon>group_add</mat-icon><span class="space-menu">Gestao de Usuarios </span></a>
-        <a mat-list-item (click)="principalMenu.toggle();divControl();logout()">
+        <a mat-list-item (click)="principalMenu.toggle(); divControl(); logout()">
             <mat-icon>power_settings_new</mat-icon><span class="space-menu">Sair</span></a>
 
     </mat-nav-list>

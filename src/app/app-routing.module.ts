@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent, LoginComponent } from './pages';
 import { EquipamentsComponent } from './pages/equipaments/equipaments.component';
+import { UsersComponent } from './pages/users/users.component';
 import { AuthGuard } from './shared';
 
 const routes: Routes = [
@@ -14,7 +15,9 @@ const routes: Routes = [
   },//reler sobre rotas filhas
 
   { path: 'equipamentos', component: EquipamentsComponent, canActivate: [AuthGuard] },
-  { path: 'usuarios', loadChildren: () => import('./users/users.module').then(m => m.UsersModule), canActivate: [AuthGuard] },
+  { path: 'usuarios',component : UsersComponent, canActivate: [AuthGuard] },
+
+ // { path: 'usuarios', loadChildren: () => import('./users/users.module').then(m => m.UsersModule), canActivate: [AuthGuard] },
 
   { path: 'login', component: LoginComponent },
 ];

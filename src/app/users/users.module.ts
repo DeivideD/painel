@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UsersRoutingModule } from './users-routing.module';
-import { UsersComponent } from './get-all';
 import { MaterialSharedModule } from 'src/app/shared'
 import { UserService } from './service';
+import { UsersComponent } from './get-all'
 
 
 @NgModule({
@@ -15,8 +15,12 @@ import { UserService } from './service';
     CommonModule,
     MaterialSharedModule,
     UsersRoutingModule
-  ], providers:[
+  ], 
+  exports: [
+    UsersComponent
+  ],
+  providers:[
     UserService,
-  ]
+  ],
 })
 export class UsersModule { }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
+import { Location } from '@angular/common';
 import { catchError } from 'rxjs/operators';
 import { AplicationService } from '../shared/';
 
@@ -8,13 +9,13 @@ import { AplicationService } from '../shared/';
 export class AuthInterceptor implements HttpInterceptor {
 
   constructor(
-    private appService: AplicationService
+    private appService: AplicationService,
+    private _loc: Location 
   ) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
 
-    console.log('HttpInterceptor');
-    const token = this.appService.getAuthorizationToken();
+     const token = this.appService.getAuthorizationToken();
     let request: HttpRequest<any> = req;
 
     if (token && !this.appService.isTokenExpired(token)) {

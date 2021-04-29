@@ -1,15 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import * as mapboxgl from 'mapbox-gl'
-import { AplicationService } from 'src/app/shared';
 import { Equipaments } from 'src/app/equipaments/shared/equipament.model';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogsComponent } from 'src/app/components/dialog/dialogs.component'
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { ModalSheetComponent } from '../modal-sheet/modal-sheet.component';
 import { SearachnavService } from '../sidebar-searach/searach.service'
-import { Subscription } from 'rxjs';
-import { MapOperator } from 'rxjs/internal/operators/map';
 import { EquipamentService } from 'src/app/equipaments/service';
 
 

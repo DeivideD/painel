@@ -24,3 +24,11 @@
     z-index: 2;
     justify-content: space-between;
 }
+
+.right {
+    display: flex;
+}
+
+.right>button {
+    margin: 0 5px;
+}

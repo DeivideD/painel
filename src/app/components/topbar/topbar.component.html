@@ -2,7 +2,7 @@
     <mat-sidenav-content>
         <mat-toolbar color="primary" class='nav-menu'>
             <div class='left'>
-                <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="openPrincipalMenu(); statusMenu.divControl()">
+                <button type="button" #btnTeste aria-label="Toggle sidenav" mat-icon-button (click)="openPrincipalMenu(); statusMenu.divControl()">
                         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
                     </button>
                 <span>Painel Mobit</span>
@@ -14,8 +14,8 @@
                 <button mat-icon-button (click)="openSearachSideNav()" class="example-icon" aria-label="Example icon-button with share icon">
                     <mat-icon>search</mat-icon>
                   </button>
-                <button mat-icon-button class="keyboard_arrow_up" aria-label="Example icon-button with share icon">
-                    <mat-icon>keyboard_arrow_up</mat-icon>
+                <button mat-icon-button class="keyboard_arrow_up" aria-label="Example icon-button with share icon" (click)=" logout() ">
+                    <mat-icon>power_settings_new</mat-icon>
                   </button>
             </div>
         </mat-toolbar>
@@ -23,7 +23,4 @@
         </ng-content>
     </mat-sidenav-content>
 </mat-sidenav-container>
-
-<app-right-sidebar-info></app-right-sidebar-info>
 <app-sidebar-menu #statusMenu></app-sidebar-menu>
-<app-sidebar-searach></app-sidebar-searach>
