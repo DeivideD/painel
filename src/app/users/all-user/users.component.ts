@@ -6,6 +6,8 @@ import {MatSort} from '@angular/material/sort';
 import { User } from '../shared/user.model';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogsComponent } from 'src/app/components/dialog/dialogs.component'
+import { NewUserComponent } from '../new-user/new-user.component'
+import { DeleteUserComponent } from '../delete-user/delete-user.component';
 
 @Component({
   selector: 'app-users',
@@ -13,7 +15,7 @@ import { DialogsComponent } from 'src/app/components/dialog/dialogs.component'
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  displayedColumns: string[] = ['nome', 'login', 'sereal', 'lastIP'];
+  displayedColumns: string[] = ['nome', 'login', 'sereal', 'lastIP','actions'];
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined ;
   @ViewChild(MatSort) sort: MatSort | undefined ;
   users: User[] = [];
@@ -46,6 +48,18 @@ export class UsersComponent implements OnInit {
       const filterValue = (event.target as HTMLInputElement).value;
       this.dataSource.filter = filterValue.trim().toLowerCase();
   
+    }
+
+    addUser(){
+      this.dialog.open( NewUserComponent )
+    }
+
+    editUser( username: string ){
+      console.log(username);
+    }
+
+    deleteUser(username: string ){
+      this.dialog.open( DeleteUserComponent, { data : username } );
     }
   
 }

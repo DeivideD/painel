@@ -1,0 +1,10 @@
+<button class="close" mat-button [mat-dialog-close]>X</button>
+
+<h2>Deletar Usuario</h2>
+<div class="hr-cima"></div>
+<span class="message">Confirma a Deleção do Usuario: <span class="name-user"> {{ user }}</span> </span>
+<div class="hr-baixo"></div>
+<mat-dialog-actions align="end">
+    <button mat-flat-button color="warn" mat-dialog-close>Cancelar</button>
+    <button mat-flat-button class="btn-confim" [mat-dialog-close] (click)="deleteUser()"> Confirmar </button>
+</mat-dialog-actions>

@@ -4,12 +4,16 @@ import { CommonModule } from '@angular/common';
 import { UsersRoutingModule } from './users-routing.module';
 import { MaterialSharedModule } from 'src/app/shared'
 import { UserService } from './service';
-import { UsersComponent } from './get-all'
+import { UsersComponent } from './all-user';
+import { NewUserComponent } from './new-user/new-user.component';
+import { DeleteUserComponent } from './delete-user/delete-user.component'
 
 
 @NgModule({
-  declarations: [
+  declarations: [ 
     UsersComponent,
+    NewUserComponent, 
+    DeleteUserComponent,
   ],
   imports: [
     CommonModule,

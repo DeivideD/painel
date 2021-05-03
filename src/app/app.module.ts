@@ -27,11 +27,6 @@ import { UserService } from './users/service/users.service'
 import { httpInterceptorProviders } from './http-intersector';
 import { UsersComponent } from './pages/users/users.component';
 
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

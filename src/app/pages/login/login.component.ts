@@ -1,4 +1,4 @@
-import { Input, Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Input, Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { UserService } from 'src/app/users/service';
 import { User } from 'src/app/users/shared/user.model';
@@ -14,7 +14,6 @@ import { AplicationService } from 'src/app/shared';
 export class LoginComponent implements OnInit {
   user: User = new User();
   @Input() error: string | null;
-  @Output() submitEM = new EventEmitter();
   form: FormGroup = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),

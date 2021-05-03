@@ -23,6 +23,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatGridListModule} from '@angular/material/grid-list'; 
 import {MatBadgeModule} from '@angular/material/badge'; 
 import {MatChipsModule} from '@angular/material/chips';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -36,6 +37,8 @@ import {MatChipsModule} from '@angular/material/chips';
     MatGridListModule,
     MatChipsModule,
     MatDialogModule,
+    ReactiveFormsModule,
+    FormsModule,
     MatTabsModule,
     MatTooltipModule,
     CommonModule,

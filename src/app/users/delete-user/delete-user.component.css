@@ -1,0 +1,32 @@
+.name-user {
+    font-weight: bold;
+}
+
+.message {
+    font-size: 15px;
+}
+
+.hr-cima {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    margin-bottom: 10px;
+}
+
+.hr-baixo {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    margin-top: 10px;
+}
+
+.btn-confim {
+    background-color: #3ec47a;
+    color: #fff;
+}
+
+.close.mat-button {
+    padding: 5px;
+    line-height: 14px;
+    min-width: auto;
+    float: right;
+    margin-right: 5px;
+}
