@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { User } from '../shared/user.model';
 
 
 @Injectable({
@@ -17,5 +18,11 @@ export class UserService {
   ///api/usuario/delete/:username
   deleteUser(user:string){
     return this.http.delete<void>(`${environment.apiURL}/usuario/delete/:${user}`);
+  }
+
+   ///api/usuario/delete/:username
+   saveeUser(user: User){
+    console.log( user );
+    return this.http.post(`${environment.apiURL}/usuario/cadastro/`, user); 
   }
 }

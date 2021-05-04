@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UserService } from '../service';
 import { MatDialog } from '@angular/material/dialog';
+import { DialogsComponent } from 'src/app/components/dialog/dialogs.component'
 
 @Component({
   selector: 'app-delete-user',
@@ -20,29 +21,14 @@ export class DeleteUserComponent implements OnInit {
 
   deleteUser() {
     this.userService.deleteUser(this.user).subscribe((data: any) => {
-      console.log('Entrou aqui sub')
-      this.dialog.open(DialogfildBack, { data: "Usuario Deletado com Sucesso!" });
-    }, error => {
-      console.log('Entrou aqui Erro')
-      this.dialog.open(DialogfildBack, {
-        data:error.descricao 
+      this.dialog.open(DialogsComponent,{
+        data: [{ cod: 'Deletado com Sucesso', description: 'Usuario Deletado com Sucesso.' }]
+      });
+    }, 
+    error => {
+      this.dialog.open(DialogsComponent, {
+        data: [{ cod: 'Erro ao Deletar', description: error.descricao + ' Tente Mais Tarde.' }]
       });
     });
-  }
-}
-
-
-@Component({
-  selector: 'dialog-content-example',
-  template: '<p>{{ message }}</p>',
-})
-export class DialogfildBack {
-  message = 'Testadno';
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
-    console.log(this.data);
-    this.message = this.data
-  }
-
-  openDialog() {
   }
 }

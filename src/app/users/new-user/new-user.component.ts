@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { User } from '../shared/user.model';
+import { UserService } from '../service';
+import { DialogsComponent } from 'src/app/components/dialog/dialogs.component'
+
 
 
 @Component({
@@ -10,8 +13,14 @@ import { User } from '../shared/user.model';
   styleUrls: ['./new-user.component.css']
 })
 export class NewUserComponent implements OnInit {
-  user: User; 
-  formUser: FormGroup = new FormGroup({
+  @ViewChild('formUser') formUser;
+  passwordConfitm: string = '';
+  user: User =  new User(); 
+
+
+  /*
+    formUser: FormGroup = new FormGroup({
+
     nome: new FormControl('', [Validators.required, Validators.minLength(5)]),
     user: new FormControl('', [Validators.required, Validators.minLength(5)]),
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -20,34 +29,44 @@ export class NewUserComponent implements OnInit {
     base: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
     passwordConfitm: new FormControl('', [Validators.required]),
-  });
-  
 
-  constructor(public dialog: MatDialog) { }
+  });
+  */
+
+  constructor(public dialog: MatDialog, private userService: UserService) { }
 
   ngOnInit(): void {
+  
     
   }
 
 
   saveUser() {
+    
+    this.userService.saveeUser(this.user).subscribe(data => {
 
+      this.dialog.open(DialogsComponent,{
+        data: [{ cod: 'Deletado com Sucesso', description: 'Usuario Salvo com Sucesso.' }]
+      })
 
-
-   console.log( this.user);
+    }),  error => {
+      this.dialog.open(DialogsComponent, {
+        data: [{ cod: 'Erro ao Salvar Usuario', description: error.descricao + ' Tente Mais Tarde.' }]
+      });
+    }
   }
 
   getErrorMessage(field) {
-    if (this.formUser.get(field)?.hasError('minlength')) {
-      return 'Campo deve ter no minimo 4 caracteres';
+    if (this.formUser.controls[field].hasError('required')){
+      return 'Campo nao pode ser vazio';
     }
-    if (this.formUser.get(field)?.hasError('required')) {
-      return 'Campo nao pode ser vazio!';
+    if (this.formUser.controls[field].hasError('minlength')){
+      return 'Tamanho mínimo de 5 caracteres';
     }
-    if (this.formUser.get(field)?.hasError('email')) {
-      return 'Formato de Email Invado!';
+    if (this.formUser.controls[field].hasError('email')){
+      return 'Email Invalido';
     }
-    return ''
+    return " ";
   }
   
 }

@@ -102,7 +102,7 @@ export class MapsComponent implements OnInit {
       this.generateHtml(this.equipaments);
     }, error => {
       this.dialog.open(DialogsComponent, {
-        data: [{ cod: 'Erro ao Carregar Aplicação ', description: 'Error ' + error.status + ' - ' + error.error.descricao + ' Faça login novamente.' }]
+        data: [{ cod: 'Erro ao Carregar Aplicação ', description: 'Error ' + error.status + ' - ' + error.descricao + ' Faça login novamente.' }]
       });
     });
   }

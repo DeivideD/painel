@@ -1,6 +1,6 @@
 <button class="close" mat-button [mat-dialog-close]>X</button>
 <div class="cont">
-    <form [formGroup]="formUser" (ngSubmit)="saveUser()">
+    <form #formUser="ngForm">
         <h2 mat-dialog-title>Novo Usuario</h2>
         <mat-dialog-content class="mat-typography">
 
@@ -8,37 +8,36 @@
 
                 <mat-form-field class="input" appearance="outline">
                     <mat-label>Nome</mat-label>
-                    <input matInput placeholder="" formControlName="nome">
-                    <mat-error *ngIf="this.formUser.invalid">{{getErrorMessage('name')}}</mat-error>
+                    <input matInput placeholder="" [(ngModel)]="user.nome" name="nome" required minlength="5" #nome="ngModel" minlength="5">
+                    <mat-error *ngIf="nome.errors">{{ getErrorMessage('nome') }}</mat-error>
                 </mat-form-field>
 
 
                 <mat-form-field appearance="outline">
                     <mat-label>Usuario</mat-label>
-                    <input matInput placeholder="" required formControlName="user">
-                    <mat-error *ngIf="formUser.invalid">{{getErrorMessage('user')}}</mat-error>
+                    <input matInput placeholder="" required [(ngModel)]="user.username" name="username" #username="ngModel" minlength="5">
+                    <mat-error *ngIf="username.errors">{{ getErrorMessage('username') }}</mat-error>
                 </mat-form-field>
 
 
 
                 <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
-                    <input type="email" matInput placeholder="pat@example.com" required formControlName="email">
-                    <mat-error *ngIf="formUser.invalid">{{getErrorMessage('email')}}</mat-error>
-                    <mat-hint>E-mail da empresa</mat-hint>
+                    <input type="email" matInput placeholder="pat@example.com" required [(ngModel)]="user.email" #email="ngModel" name="email" email>
+                    <mat-error *ngIf="email.errors">{{ getErrorMessage('email') }}</mat-error>
                 </mat-form-field>
 
 
                 <mat-form-field appearance="outline">
                     <mat-label>Permissão</mat-label>
-                    <mat-select formControlName="permision">
+                    <mat-select [(ngModel)]="user.papeis" name="papeis" #papeis="ngModel" required>
                         <mat-option value="Usuario">Usuario</mat-option>
                         <mat-option value="Encarregado">Encarregado</mat-option>
                         <mat-option value="Gerente">Gerente</mat-option>
                         <mat-option value="Coordenador">Coordenador</mat-option>
                         <mat-option value="Administrador">Administrador</mat-option>
                     </mat-select>
-                    <mat-error *ngIf="formUser.invalid">{{getErrorMessage('permision')}}</mat-error>
+                    <mat-error *ngIf="papeis.errors">{{ getErrorMessage('papeis') }}</mat-error>
                 </mat-form-field>
             </div>
 
@@ -47,18 +46,18 @@
 
                 <mat-form-field appearance="outline">
                     <mat-label>Departamento</mat-label>
-                    <mat-select formControlName="departament">
+                    <mat-select [(ngModel)]="user.departamento" name="departamento" departamento #departamento="ngModel" required>
                         <mat-option value="Suporte e Monitoramento">Suporte e Monitoramento</mat-option>
                         <mat-option value="Engenharia">Engenharia</mat-option>
                         <mat-option value="Contratos">Contratos</mat-option>
 
                     </mat-select>
-                    <mat-error *ngIf="formUser.invalid">{{getErrorMessage('departament')}}</mat-error>
+                    <mat-error *ngIf="departamento.errors">{{ getErrorMessage('departamento') }}</mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Base</mat-label>
-                    <mat-select formControlName="base">
+                    <mat-select [(ngModel)]="user.base" name="base" #base="ngModel" required>
                         <mat-option value="Fortaleza">Fortaleza</mat-option>
                         <mat-option value="Americanas">Americanas</mat-option>
                         <mat-option value="Sobral">Sobral</mat-option>
@@ -69,23 +68,22 @@
                         <mat-option value="Imperatriz">Imperatriz</mat-option>
                         <mat-option value="Juazeiro">Juazeiro</mat-option>
                     </mat-select>
-                    <mat-error *ngIf="formUser.invalid">{{getErrorMessage('base')}}</mat-error>
+                    <mat-error *ngIf="base.errors">{{ getErrorMessage('base') }}</mat-error>
                 </mat-form-field>
 
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Id Chat Bot</mat-label>
+                    <input matInput [(ngModel)]="user.chat_bot" name="chat_bot" #chat_bot="ngModel">
+                    <mat-error *ngIf="chat_bot.errors">{{ getErrorMessage('chat_bot') }}</mat-error>
+                </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Senha</mat-label>
-                    <input type="password" matInput formControlName="password">
-                    <mat-error *ngIf="formUser.invalid">{{getErrorMessage('password')}}</mat-error>
-
+                    <input type="password" matInput [(ngModel)]="user.password" name="password" #password="ngModel" required>
+                    <mat-error *ngIf="password.errors">{{ getErrorMessage('password') }}</mat-error>
                 </mat-form-field>
-
-
-                <mat-form-field appearance="outline">
-                    <mat-label>Confirme a Senha</mat-label>
-                    <input type="password" matInput formControlName="passwordConfitm">
-                </mat-form-field>
-
             </div>
 
         </mat-dialog-content>
