@@ -38,7 +38,7 @@ section {
 
 .example-button-row {
     display: table-cell;
-    width: 70px;
+    width: 55px;
 }
 
 .example-button-row .mat-button-base {
@@ -63,4 +63,13 @@ section {
 
 .btn-plus {
     background-color: rgba(6, 179, 84, 0.774);
+}
+
+.papel {
+    background-color: tomato;
+}
+
+.head-table {
+    font-weight: bolder;
+    font-size: 15px;
 }

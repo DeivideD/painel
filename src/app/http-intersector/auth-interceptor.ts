@@ -15,7 +15,12 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
 
-     const token = this.appService.getAuthorizationToken();
+    //console.log('HttpInterceptor');
+    //console.log(this._loc.path())
+    //pego a pagina para decidir o que renderizar no topbar 
+    //this.appService.SetCurrentPage( this._loc.path());
+
+    const token = this.appService.getAuthorizationToken();
     let request: HttpRequest<any> = req;
 
     if (token && !this.appService.isTokenExpired(token)) {

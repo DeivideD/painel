@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { User } from '../shared/user.model';
 import { UserService } from '../service';
 import { DialogsComponent } from 'src/app/components/dialog/dialogs.component'
+import { Papel } from '../shared/papel.model';
 
 
 
@@ -16,6 +16,7 @@ export class NewUserComponent implements OnInit {
   @ViewChild('formUser') formUser;
   passwordConfitm: string = '';
   user: User =  new User(); 
+  permissions;
 
 
   /*
@@ -36,24 +37,24 @@ export class NewUserComponent implements OnInit {
   constructor(public dialog: MatDialog, private userService: UserService) { }
 
   ngOnInit(): void {
-  
-    
+    this.userService.getPApeis().subscribe(data => {
+     this.permissions = data.dados;
+    });
   }
 
-
   saveUser() {
-    
+    this.userService.attTable.emit(false);
     this.userService.saveeUser(this.user).subscribe(data => {
 
       this.dialog.open(DialogsComponent,{
         data: [{ cod: 'Deletado com Sucesso', description: 'Usuario Salvo com Sucesso.' }]
       })
-
     }),  error => {
       this.dialog.open(DialogsComponent, {
         data: [{ cod: 'Erro ao Salvar Usuario', description: error.descricao + ' Tente Mais Tarde.' }]
       });
     }
+    this.userService.attTable.emit(true);
   }
 
   getErrorMessage(field) {
@@ -68,7 +69,6 @@ export class NewUserComponent implements OnInit {
     }
     return " ";
   }
-  
 }
 
 
