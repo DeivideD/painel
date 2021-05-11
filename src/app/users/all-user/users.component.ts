@@ -39,7 +39,6 @@ export class UsersComponent implements OnInit {
   getAllUser() {
     this.userService.getAllUsers().subscribe((data: any) => {
       this.users = data.dados;
-      console.log(this.users);
       this.dataSource = new MatTableDataSource(this.users); //carrego a variavel de filtro
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;

@@ -12,6 +12,7 @@ export class UserService {
 
 
   attTable = new EventEmitter<boolean>();
+  hasError = new EventEmitter<any>();
 
   constructor(private http: HttpClient) { }
 
@@ -29,8 +30,8 @@ export class UserService {
   }
 
   ///api/usuario/delete/:username
-  saveeUser(user: User):any {
-    return this.http.post(`${environment.apiURL}/usuario/cadastro/`, user);
+  saveeUser(user: User) {
+    return this.http.post<User>(`${environment.apiURL}/usuario/cadastro/`, user);
   }
 
   ///api/usuario/delete/:username

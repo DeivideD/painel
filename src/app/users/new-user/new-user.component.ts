@@ -43,23 +43,18 @@ export class NewUserComponent implements OnInit {
   }
 
   saveUser() {
-    console.log("Chamou")
     this.userService.attTable.emit(false);
     this.userService.saveeUser(this.user).subscribe(data => {
-
       this.dialog.open(DialogsComponent,{
         data: [{ cod: 'Cadastrado com Sucesso', description: 'Usuario Salvo com Sucesso.' }]
       });
 
-    }),  error => {
-      console.log("Entrou e deu erro")
-      
+    },  error => {
       this.dialog.open(DialogsComponent, {
-        data: [{ cod: 'Erro ao Salvar Usuario', description: error.descricao + ' Tente Mais Tarde.' }]
+        data: [{ cod: 'Erro ao Salvar Usuario', description: error.code + " - "+ error.descricao + ' Tente Mais Tarde.' }]
       });
   
-    },
-    next => console.log('Next num: ' + next),
+    }),
     this.userService.attTable.emit(true);
   }
 

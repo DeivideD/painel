@@ -20,7 +20,6 @@ export class SidenavService {
 	}
 
 	public toggle() {
-    console.log(this.sidenav);
 		return this.sidenav.toggle();
 	}
 }

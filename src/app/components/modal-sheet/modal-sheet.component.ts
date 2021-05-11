@@ -95,8 +95,6 @@ export class ModalSheetComponent implements OnInit {
   ngOnInit(): void {
     this.site_status.pop();
     this.data.map(element => {
-
-      console.log(element);
       this.title = element.dados.equipamento;
       this.endereco = captalize.default(element.dados.endereco_mestre);
       this.cidade = captalize.default(element.dados.cidade);
@@ -139,11 +137,9 @@ export class ModalSheetComponent implements OnInit {
         //console.log(this.getStatusComponents(this.status, element.dados.informacoes[0].descricao));
         let whatComponent = this.getStatusComponents(this.status, element.dados.informacoes[0].descricao)
 
-        console.log(whatComponent)
+
         whatComponent.forEach(element => {
-
           if (typeof element['component'] !== 'undefined') {
-
             if (element['component'].indexOf('SEMAFORO') >= 0) {
 
               this.semaforo_descri = captalize.default(element['status_descript']);
@@ -251,7 +247,6 @@ export class ModalSheetComponent implements OnInit {
 
               }
 
-              console.log(this.site_status);
             });
           }
         }

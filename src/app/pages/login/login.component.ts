@@ -38,7 +38,6 @@ export class LoginComponent implements OnInit {
           window.localStorage.setItem('x-access-token', data.token);
           this.user = getLogin.dados;
           this.router.navigate(['/home']);
-          console.log(this.user)
         }
 
 

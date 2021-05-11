@@ -85,7 +85,6 @@ export class SidebarSearachComponent implements OnInit {
 
     if (index >= 0) {
       this.fruits.splice(index, 1);
-      console.log('removeu');
       this.searachnavService.removeFilterContact( this.fruits );
     }
   }

@@ -66,7 +66,7 @@ export class MapsComponent implements OnInit {
 
     //filtro por contrato
     this.serviceSearach.emiterFilterContract.subscribe(fil => {
-      console.log(fil);
+
       //this.geojson.forEach(element => {
       //element.remove();
       //});
