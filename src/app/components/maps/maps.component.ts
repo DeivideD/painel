@@ -48,6 +48,8 @@ export class MapsComponent implements OnInit {
 
   ngOnInit(): void {
 
+    
+
     mapboxgl.accessToken = environment.mapKey;
     map = new mapboxgl.Map({
       container: 'principal-map', // container id

@@ -1,0 +1,20 @@
+<mat-sidenav-container class="sidenav-container ng-hide">
+    <mat-sidenav-content>
+        <mat-toolbar color="primary" class='nav-menu'>
+            <div class='left'>
+                <button type="button" #btnTeste aria-label="Toggle sidenav" mat-icon-button (click)="openPrincipalMenu(); statusMenu.divControl()">
+                      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+                  </button>
+                <span>Painel Mobit</span>
+            </div>
+            <div class="right">
+                <button mat-icon-button class="keyboard_arrow_up" aria-label="Example icon-button with share icon" (click)=" logout() ">
+                  <mat-icon>power_settings_new</mat-icon>
+                </button>
+            </div>
+        </mat-toolbar>
+        <ng-content>
+        </ng-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<app-sidebar-menu #statusMenu></app-sidebar-menu>

@@ -54,11 +54,10 @@ export class GetAllComponent implements OnInit  {
       this.dataSource = new MatTableDataSource(this.equipaments); //carrego a variavel de filtro
       this.dataSource.paginator = this.paginator;
       this.aux = this.dataSource;
-      //console.log(this.equipaments);
       this.isLoading = false;
     }, error => {
       this.dialog.open(DialogsComponent, {
-        data: [{ cod: 'Erro ao Carregar Aplicação ' , description: 'Error ' + error.status + ' - ' + error.error.descricao + ' Faça login novamente.' }]
+        data: [{ cod: 'Erro ao Carregar Aplicação ' , description: 'Error ' + error.status + ' - ' + error.descricao + ' Faça login novamente.' }]
       });
     });
   }

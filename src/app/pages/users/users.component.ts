@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AplicationService } from 'src/app/shared';
 
 @Component({
   selector: 'app-users-page',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private appService: AplicationService) { }
 
   ngOnInit(): void {
+    this.appService.attCorrentePage('users');
   }
 
 }

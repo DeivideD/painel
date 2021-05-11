@@ -42,8 +42,7 @@ export class LoginComponent implements OnInit {
         }
 
 
-      }, error => {
-
+      }, error => {   
         if (error.descricao.indexOf('Senha') > -1 ) {
 
           this.form = new FormGroup({

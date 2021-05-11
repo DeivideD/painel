@@ -1,7 +1,7 @@
 <mat-sidenav #principalMenu class="sidenav" fixedInViewport="true">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list class="menu-item">
-        <a mat-list-item [routerLink]="['/home']" (click)="toggleMenu();divControl()">
+        <a mat-list-item [routerLink]="['/']" (click)="toggleMenu();divControl()">
             <mat-icon>account_balance</mat-icon><span class="space-menu"> Home </span> </a>
         <a mat-list-item [routerLink]="['/equipamentos']" (click)="principalMenu.toggle(); divControl()">
             <mat-icon>usb</mat-icon><span class="space-menu">Equipamentos </span></a>

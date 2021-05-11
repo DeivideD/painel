@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AplicationService } from 'src/app/shared';
 
 
 @Component({
@@ -9,10 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
 
-  constructor( ) { }
+  constructor(private appService: AplicationService ) { }
 
   ngOnInit(): void {
- 
+    this.appService.attCorrentePage('home');
   }
 
 }

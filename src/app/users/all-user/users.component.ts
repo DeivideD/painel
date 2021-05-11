@@ -39,13 +39,14 @@ export class UsersComponent implements OnInit {
   getAllUser() {
     this.userService.getAllUsers().subscribe((data: any) => {
       this.users = data.dados;
+      console.log(this.users);
       this.dataSource = new MatTableDataSource(this.users); //carrego a variavel de filtro
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
       this.aux = this.dataSource;
     }, error => {
       this.dialog.open(DialogsComponent, {
-        data: [{ cod: 'Erro ao Carregar Aplicação ', description: 'Error ' + error.status + ' - ' + error.error.descricao + ' Faça login novamente.' }]
+        data: [{ cod: 'Erro ao Carregar Aplicação ', description: 'Error ' + error.status + ' - ' + error.descricao + ' Faça login novamente.' }]
       });
     });
 

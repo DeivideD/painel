@@ -2,6 +2,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { User } from '../shared/user.model';
+import {  catchError } from 'rxjs/operators';
 
 
 @Injectable({
@@ -23,17 +24,17 @@ export class UserService {
   }
 
   ///api/usuario/delete/:username
-  deleteUser(user: string) {
+  deleteUser(user: string): any {
     return this.http.delete<void>(`${environment.apiURL}/usuario/delete/${user}`);
   }
 
   ///api/usuario/delete/:username
-  saveeUser(user: User) {
+  saveeUser(user: User):any {
     return this.http.post(`${environment.apiURL}/usuario/cadastro/`, user);
   }
 
   ///api/usuario/delete/:username
-  editUser(user: User) {
+  editUser(user: User): any {
     return this.http.put(`${environment.apiURL}/usuario/atualizar_dados/`, user);
   }
 }

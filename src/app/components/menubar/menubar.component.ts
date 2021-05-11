@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AplicationService } from 'src/app/shared';
+
 
 @Component({
   selector: 'app-menubar',
@@ -6,15 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menubar.component.css']
 })
 export class MenubarComponent implements OnInit {
-  isSideVisible: boolean = false;
+  isHomeSidebar: boolean = true;
 
-  constructor() { }
+  constructor(private appService: AplicationService) { }
 
   ngOnInit(): void {
+    this.appService.correntPage.subscribe(data =>{
+        if(data !== 'home'){
+          this.isHomeSidebar = false;
+          console.log(this.isHomeSidebar);
+        }
+    });
   }
-
-  divControl(){
-    this.isSideVisible = !this.isSideVisible;
-  }
-
 }

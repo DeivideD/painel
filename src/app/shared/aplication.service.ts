@@ -9,9 +9,17 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AplicationService {
-	correntPage = new EventEmitter<any>();
+	correntPage = new EventEmitter<string>();
 
   constructor(private http: HttpClient, private router: Router) { }
+
+
+
+
+
+  attCorrentePage(page:string){
+    this.correntPage.emit(page);
+  }
 
   // Headers
   /**
@@ -78,5 +86,4 @@ export class AplicationService {
       this.router.navigate(['login']);
     }, 100);
   }
-
 }

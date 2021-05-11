@@ -26,6 +26,8 @@ import { EquipamentsComponent } from './pages/equipaments/equipaments.component'
 import { UserService } from './users/service/users.service'
 import { httpInterceptorProviders } from './http-intersector';
 import { UsersComponent } from './pages/users/users.component';
+import { TopbarNohomeComponent } from './components/topbar-nohome/topbar-nohome.component';
+import { MenubarNohomeComponent } from './components/menubar-nohome/menubar-nohome.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { UsersComponent } from './pages/users/users.component';
     SidebarSearachComponent,
     EquipamentsComponent,
     UsersComponent,
+    TopbarNohomeComponent,
+    MenubarNohomeComponent,
   ],
   imports: [
     FormsModule,
